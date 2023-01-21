@@ -3,7 +3,7 @@ from tkinter import *
 import tkinter.font as tkFont
 
 # Cria a função responsável por obter a variável do usuário, buscar o valor correspondente na base de dados e exibe na interface gráfica
-def buscar():
+def buscar(event):
     quant = 0
     error = 0
     c = 0
@@ -49,6 +49,8 @@ entry.pack(padx=10, pady=10)
 # Cria o botão para executar a função
 botao = Button(root, text='Buscar', bd='5', command=buscar, height=2, width=10, bg=background2)
 botao.pack(padx=10, pady=10)
+
+root.bind('<Return>', buscar)
 
 # Configuração para que texto apareça na interface gráfica
 texto1 = Label(root, text='', font=fontStyle, bg=background, foreground='white')
